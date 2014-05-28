@@ -53,6 +53,9 @@
 -(int)getCurrentDisplayedPage;
 -(int)getXPositionOfPage:(int)page;
 
+// My method
+- (void)setPageControl:(UIPageControl *)newPageControl;
+
 
 
 @property (nonatomic, weak) id<TTSlidingPagesDataSource> dataSource;
