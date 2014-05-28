@@ -56,6 +56,9 @@
 // My method
 - (void)setPageControl:(UIPageControl *)newPageControl;
 
+// Adding triggerScrollViewRecalculation
+- (void)triggerScrollViewRecalculation;
+
 
 
 @property (nonatomic, weak) id<TTSlidingPagesDataSource> dataSource;
