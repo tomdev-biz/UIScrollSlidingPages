@@ -26,3 +26,4 @@
   requires_arc: true,
   resources: "UIScrollViewSlidingPages/Source/Images/**/*.png"
 }
+
