@@ -584,7 +584,11 @@
         topScrollView.contentOffset = CGPointMake(topXPosition, 0);
         topScrollView.delegate = self;
     }
-    
+
+    // CHANGE - Adding scrollViewDidScroller method
+    if([self.dataSource respondsToSelector:@selector(scrollViewDidScroller:)]) {
+        [self.dataSource scrollViewDidScroller:scrollView];
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -595,9 +599,9 @@
     //store the page you were on so if you have a rotate event, or you come back to this view you know what page to start at. (for example from a navigation controller), the viewDidLayoutSubviews method will know which page to navigate to (for example if the screen was portrait when you left, then you changed to landscape, and navigate back, then viewDidLayoutSubviews will need to change all the sizes of the views, but still know what page to set the offset to)
     currentPageBeforeRotation = [self getCurrentDisplayedPage];
     
-    
+    // CHANGE so pageControl is correctly updated
     //update the pagedots pagenuber
-    if (!self.disableUIPageControl){
+    if (pageControl) {
         //set the correct page on the pagedots
         pageControl.currentPage = currentPage;
     }
@@ -717,7 +721,13 @@
     }
 }
 
+// CHANGE - Adding method
+- (void)setPageControl:(UIPageControl *)newPageControl {
+    pageControl = newPageControl;
+}
 
 
-
+- (void)triggerScrollViewRecalculation {
+    [self.dataSource scrollViewDidScroller:bottomScrollView];
+}
 @end
