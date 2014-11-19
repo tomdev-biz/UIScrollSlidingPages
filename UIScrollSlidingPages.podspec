@@ -16,6 +16,5 @@ Pod::Spec.new do |s|
     "UIScrollViewSlidingPages/Source/**/*.{h,m}"
   ]
   s.requires_arc = true
-  s.resources = "UIScrollViewSlidingPages/Source/Images/**/*.png"
 end
 
