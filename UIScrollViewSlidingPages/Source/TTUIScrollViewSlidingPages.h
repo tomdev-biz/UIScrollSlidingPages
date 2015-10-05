@@ -30,4 +30,3 @@
 
 #import "TTScrollSlidingPagesController.h"
 #import "TTSlidingPage.h"
-#import "TTSlidingPageTitle.h"
