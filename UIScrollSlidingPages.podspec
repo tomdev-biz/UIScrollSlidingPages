@@ -1,6 +1,9 @@
 Pod::Spec.new do |s|
   s.name = "UIScrollSlidingPages"
   s.version = "1.3"
+  s.author = {
+    'Tomasz Przybyl' => 'tomdev.biz@gmail.com'
+  }
   s.summary = "This control allows you to add multiple view controllers and have them scroll horizontally, each with a smaller header view."
   s.homepage = "https://github.com/TomThorpe/UIScrollSlidingPages"
   s.license = "MIT"
